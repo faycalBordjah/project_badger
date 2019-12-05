@@ -19,15 +19,16 @@ exports.register = function (req, res) {
 
     new_user.save(function (err, user) {
         if (err) {
+            res.status(400);
             res.json({
-                status: res.status(400),
+                status: "400",
                 message: "Could not create user.",
                 data: user
             });
         }
         res.status(201);
         res.json({
-                status: res.status(201),
+                status: "201",
                 message: "User created.",
                 data: new_user
             }
@@ -47,8 +48,9 @@ exports.login = function (req, res) {
                 user_id: user._id});
             })
         } else {
+            res.status(400);
             res.json({
-              status: res.status(400),
+              status: "400",
               message: "Authentication failed.",
               data: null
             });
