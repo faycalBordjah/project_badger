@@ -15,6 +15,8 @@ RUN npm install config jsonwebtoken bcrypt
 
 # Bundle app source
 COPY app.js .
+COPY config ./config
+COPY middleware ./middleware
 
 EXPOSE 8080
 CMD [ "node", "app.js" ]
