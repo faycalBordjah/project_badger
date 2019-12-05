@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const jwt = require('jsonwebtoken');
+const bcrypt = require('bcrypt');
 const config = require('config');
 User = mongoose.model('Users');
 
@@ -37,22 +38,31 @@ exports.register = function (req, res) {
 };
 
 exports.login = function (req, res) {
-    User.findOne({email: req.body.email}, function (err, user) {
+    User.findOne({mail: req.body.mail}, function (err, user) {
         if (err) res.send(err);
-        if (user.email === req.body.email
-            && user.password === req.body.password) {
-            jwt.sign({user}, config.get('jwt_signature'),
+        if (!user) {
+            res.status(400);
+            res.json({
+                status: "404",
+                message: "USer not found.",
+                user: user
+            });
+        }
+        if (bcrypt.compareSync(req.body.password, user.password)) {
+            jwt.sign({user}, config.get("jwt_signature"),
                 {expiration: '1h'}, (err, token) => {
-                if (err) res.send(err);
-                res.json({token: token,
-                user_id: user._id});
-            })
+                    if (err) res.send(err);
+                    res.json({
+                        token: token,
+                        user_id: user._id
+                    });
+                })
         } else {
             res.status(400);
             res.json({
-              status: "400",
-              message: "Authentication failed.",
-              data: null
+                status: "400",
+                message: "Authentication failed.",
+                data: null
             });
         }
     })

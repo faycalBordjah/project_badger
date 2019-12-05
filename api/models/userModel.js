@@ -1,6 +1,5 @@
-const jwt = require('jsonwebtoken');
 const mongoose = require('mongoose');
-const config = require('config');
+const bcrypt = require('bcrypt');
 var Schema = mongoose.Schema;
 
 let userSchema = new Schema({
@@ -23,9 +22,9 @@ let userSchema = new Schema({
 
 });
 
-userSchema.methods.generateAuthToken = function(){
-  const token = jwt.sign({_id: this._id, isAdmin: this.isAdmin}, config.get('privatekeyipssi'));
-  return token;
-}
+userSchema.pre('save', function(next){
+  this.password = bcrypt.hashSync(this.password, 10);
+  next();
+});
 
 module.exports = mongoose.model('Users', userSchema);
