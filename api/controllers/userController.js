@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
 User = mongoose.model('Users');
-
 exports.list_all_users = function (req, res){
   User.find({}, function(err, users){
     if(err){
