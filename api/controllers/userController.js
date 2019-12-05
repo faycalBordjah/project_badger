@@ -10,17 +10,23 @@ exports.list_all_users = function (req, res){
     res.status(200);
     res.json(users);
   })
-}
+};
 
-exports.create_user = function(req, res){
+exports.register = function(req, res){
   var new_user = new User(req.body);
 
   new_user.save(function(err, user){
     if(err){
       res.status(400);
-      res.json({error: err});
+      res.json({status: res.status(400),
+        message: "Could not create user.",
+        users: user
+      });
     }
     res.status(201);
-    res.json(user);
+    res.json({status: "201",
+        message: "User created.",
+        user: new_user}
+  );
   })
-}
+};
