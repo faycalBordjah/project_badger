@@ -1,13 +1,13 @@
 const mongoose = require('mongoose');
 const jwt = require('jsonwebtoken');
-const config = require('config/default');
+const config = require('config');
 User = mongoose.model('Users');
 
 exports.list_all_users = function (req, res) {
     User.find({}, function (err, users) {
         if (err) {
             res.status(400);
-            res.json({error: "erreur"});
+            res.json({error: "Bad request"});
         }
         res.status(200);
         res.json(users);
@@ -40,7 +40,7 @@ exports.login = function (req, res) {
         if (err) res.send(err);
         if (user.email === req.body.email
             && user.password === req.body.password) {
-            jwt.sign({user}, config.default.jwt_signature,
+            jwt.sign({user}, config.get('jwt_signature'),
                 {expiration: '1h'}, (err, token) => {
                 if (err) res.send(err);
                 res.json({token: token,

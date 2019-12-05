@@ -9,7 +9,7 @@ exports.validateToken = function (req, res, next) {
 
     try {
         //if can verify the token, set req.user and pass to next middleware
-        const decoded = jwt.verify(token, config.get("privatekeyipssi"));
+        const decoded = jwt.verify(token, config.get("jwt_signature"));
         req.user = decoded;
         next();
     } catch (ex) {
