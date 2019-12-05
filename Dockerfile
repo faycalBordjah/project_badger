@@ -9,7 +9,7 @@ WORKDIR /usr/src/app
 COPY package*.json ./
 
 RUN npm install
-RUN npm i config joi express mongoose jsonwebtoken bcrypt
+RUN npm install config jsonwebtoken bcrypt
 # If you are building your code for production
 # RUN npm ci --only=production
 
