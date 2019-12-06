@@ -1,12 +1,11 @@
-module.exports = function(app){
-  const user = require('../controllers/userController');
+module.exports = function (app) {
+    const userController = require('../controllers/userController');
 
-  app.route('/users')
-  .get(user.list_all_users)
-  .post(user.create_user);
+    app.route('/users')
+        .post(userController.register)
+        .get(userController.list_all_users);
 
-  // app.route('/users/:id')
-  // .get(user.get_user)
-  // .put(user.update_user)
-  // .delete(user.delete_user);
-}
+    app.route('/login')
+        .post(userController.login);
+
+};
