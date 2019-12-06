@@ -4,9 +4,10 @@ module.exports = function (app) {
 
     app.route('/users')
     .all(auth.validateToken)
-    .post(userController.register)
     .get(userController.list_all_users);
 
+    app.route('/register')
+        .post(userController.register);
 
     app.route('/users/:id')
     .all(auth.validateToken)

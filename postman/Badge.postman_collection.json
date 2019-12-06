@@ -1,7 +1,7 @@
 {
 	"info": {
-		"_postman_id": "b2444057-1045-4e65-81b9-5add876bc754",
-		"name": "Badge",
+		"_postman_id": "6f646f6a-3693-4bc8-8030-5472def4bd79",
+		"name": "Badge copy",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
@@ -12,9 +12,15 @@
 					"name": "Get all users",
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjVkZWE2MTJhMjliYTdmN2Y4NGY0NDI4NiIsIm5hbWUiOiJ0ZXN0IiwibWFpbCI6InRlc3RAdGVzdC5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCRJb09Ra2pWMDJqTVFiTjBYeWRqdUEuOVN0SHJCdDNabTlwZ0tHNG5wWm5HZDkxdlcwNkt6QyIsIl9fdiI6MH0sImlhdCI6MTU3NTY0MTg5MywiZXhwIjoxNTc1NjQ1NDkzfQ.3a4PZDNnyi_zWAWDtcxxW7gFGEcW1OYtD8hpcL6H0Ec",
+								"type": "text"
+							}
+						],
 						"url": {
-							"raw": "http://0.0.0.0:3000/users",
+							"raw": "http://0.0.0.0:3000/users?Authorization",
 							"protocol": "http",
 							"host": [
 								"0",
@@ -25,6 +31,12 @@
 							"port": "3000",
 							"path": [
 								"users"
+							],
+							"query": [
+								{
+									"key": "Authorization",
+									"value": ""
+								}
 							]
 						}
 					},
@@ -34,9 +46,25 @@
 					"name": "Create user",
 					"request": {
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\":\"test\",\n\t\"mail\":\"test@test.com\",\n\t\"password\": \"secret\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
-							"raw": "http://0.0.0.0:3000/users",
+							"raw": "http://0.0.0.0:3000/register",
 							"protocol": "http",
 							"host": [
 								"0",
@@ -46,7 +74,7 @@
 							],
 							"port": "3000",
 							"path": [
-								"users"
+								"register"
 							]
 						}
 					},
@@ -66,7 +94,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\"mail\":\"ddd\",\n\"password\":\"dddddd\"\n}",
+							"raw": "{\t\"mail\":\"test@test.com\",\n\t\"password\": \"secret\"}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -106,6 +134,11 @@
 								"name": "Content-Type",
 								"value": "application/json",
 								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjVkZWE2MTJhMjliYTdmN2Y4NGY0NDI4NiIsIm5hbWUiOiJ0ZXN0IiwibWFpbCI6InRlc3RAdGVzdC5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCRJb09Ra2pWMDJqTVFiTjBYeWRqdUEuOVN0SHJCdDNabTlwZ0tHNG5wWm5HZDkxdlcwNkt6QyIsIl9fdiI6MH0sImlhdCI6MTU3NTY0MTg5MywiZXhwIjoxNTc1NjQ1NDkzfQ.3a4PZDNnyi_zWAWDtcxxW7gFGEcW1OYtD8hpcL6H0Ec",
+								"type": "text"
 							}
 						],
 						"body": {
@@ -138,7 +171,13 @@
 					"name": "Get all sessions",
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjVkZWE2MTJhMjliYTdmN2Y4NGY0NDI4NiIsIm5hbWUiOiJ0ZXN0IiwibWFpbCI6InRlc3RAdGVzdC5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCRJb09Ra2pWMDJqTVFiTjBYeWRqdUEuOVN0SHJCdDNabTlwZ0tHNG5wWm5HZDkxdlcwNkt6QyIsIl9fdiI6MH0sImlhdCI6MTU3NTY0MTg5MywiZXhwIjoxNTc1NjQ1NDkzfQ.3a4PZDNnyi_zWAWDtcxxW7gFGEcW1OYtD8hpcL6H0Ec",
+								"type": "text"
+							}
+						],
 						"url": {
 							"raw": "http://0.0.0.0:3000/sessions",
 							"protocol": "http",
@@ -160,7 +199,13 @@
 					"name": "Get a session",
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjVkZWE2MTJhMjliYTdmN2Y4NGY0NDI4NiIsIm5hbWUiOiJ0ZXN0IiwibWFpbCI6InRlc3RAdGVzdC5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCRJb09Ra2pWMDJqTVFiTjBYeWRqdUEuOVN0SHJCdDNabTlwZ0tHNG5wWm5HZDkxdlcwNkt6QyIsIl9fdiI6MH0sImlhdCI6MTU3NTY0MTg5MywiZXhwIjoxNTc1NjQ1NDkzfQ.3a4PZDNnyi_zWAWDtcxxW7gFGEcW1OYtD8hpcL6H0Ec",
+								"type": "text"
+							}
+						],
 						"url": {
 							"raw": "http://0.0.0.0:3000/sessions/:id",
 							"protocol": "http",
@@ -195,6 +240,11 @@
 								"key": "Content-Type",
 								"name": "Content-Type",
 								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjVkZWE2MTJhMjliYTdmN2Y4NGY0NDI4NiIsIm5hbWUiOiJ0ZXN0IiwibWFpbCI6InRlc3RAdGVzdC5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCRJb09Ra2pWMDJqTVFiTjBYeWRqdUEuOVN0SHJCdDNabTlwZ0tHNG5wWm5HZDkxdlcwNkt6QyIsIl9fdiI6MH0sImlhdCI6MTU3NTY0MTg5MywiZXhwIjoxNTc1NjQ1NDkzfQ.3a4PZDNnyi_zWAWDtcxxW7gFGEcW1OYtD8hpcL6H0Ec",
 								"type": "text"
 							}
 						],
@@ -236,7 +286,13 @@
 					"name": "Delete a session",
 					"request": {
 						"method": "DELETE",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjVkZWE2MTJhMjliYTdmN2Y4NGY0NDI4NiIsIm5hbWUiOiJ0ZXN0IiwibWFpbCI6InRlc3RAdGVzdC5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCRJb09Ra2pWMDJqTVFiTjBYeWRqdUEuOVN0SHJCdDNabTlwZ0tHNG5wWm5HZDkxdlcwNkt6QyIsIl9fdiI6MH0sImlhdCI6MTU3NTY0MTg5MywiZXhwIjoxNTc1NjQ1NDkzfQ.3a4PZDNnyi_zWAWDtcxxW7gFGEcW1OYtD8hpcL6H0Ec",
+								"type": "text"
+							}
+						],
 						"url": {
 							"raw": "http://0.0.0.0:3000/sessions/:id",
 							"protocol": "http",
@@ -300,6 +356,11 @@
 								"name": "Content-Type",
 								"type": "text",
 								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjVkZWE2MTJhMjliYTdmN2Y4NGY0NDI4NiIsIm5hbWUiOiJ0ZXN0IiwibWFpbCI6InRlc3RAdGVzdC5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCRJb09Ra2pWMDJqTVFiTjBYeWRqdUEuOVN0SHJCdDNabTlwZ0tHNG5wWm5HZDkxdlcwNkt6QyIsIl9fdiI6MH0sImlhdCI6MTU3NTY0MTg5MywiZXhwIjoxNTc1NjQ1NDkzfQ.3a4PZDNnyi_zWAWDtcxxW7gFGEcW1OYtD8hpcL6H0Ec",
+								"type": "text"
 							}
 						],
 						"body": {
