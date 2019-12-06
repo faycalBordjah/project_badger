@@ -7,9 +7,9 @@ module.exports = function (app) {
 
 
     app.route('/users/:id')
-    .get(user.get_user)
-    .put(user.update_user)
-    .delete(user.delete_user);
+    .get(userController.get_user)
+    .put(userController.update_user)
+    .delete(userController.delete_user);
 
     app.route('/login')
         .post(userController.login);
