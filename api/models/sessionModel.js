@@ -1,6 +1,9 @@
+// Get "mongoose" library
 const mongoose = require('mongoose');
+// Get "mongoose" Schema
 var Schema     = mongoose.Schema;
 
+// create a new Schema and store it into a variable
 let sessionSchema = new Schema({
   nom: {
     type: String,
@@ -15,4 +18,5 @@ let sessionSchema = new Schema({
   }
 });
 
+// Export the sessions schema 
 module.exports = mongoose.model('Sessions', sessionSchema);
