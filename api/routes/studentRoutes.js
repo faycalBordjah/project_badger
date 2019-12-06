@@ -1,6 +1,6 @@
 module.exports = function (app) {
     const student = require('../controllers/studentController');
-    const auth = require('middleware/auth');
+    const auth = require('../../middleware/auth');
 
     app.route('/students')
         .all(auth.validateToken)
