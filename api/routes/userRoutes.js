@@ -1,12 +1,15 @@
 module.exports = function (app) {
     const userController = require('../controllers/userController');
+    const auth = require('../../middleware/auth');
 
     app.route('/users')
-        .post(userController.register)
-        .get(userController.list_all_users);
+    .all(auth.validateToken)
+    .post(userController.register)
+    .get(userController.list_all_users);
 
 
     app.route('/users/:id')
+    .all(auth.validateToken)
     .get(userController.get_user)
     .put(userController.update_user)
     .delete(userController.delete_user);
