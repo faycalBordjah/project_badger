@@ -1,0 +1,547 @@
+{
+	"info": {
+		"_postman_id": "6f646f6a-3693-4bc8-8030-5472def4bd79",
+		"name": "Badge copy",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "userAPI",
+			"item": [
+				{
+					"name": "Get all users",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjVkZWE2MTJhMjliYTdmN2Y4NGY0NDI4NiIsIm5hbWUiOiJ0ZXN0IiwibWFpbCI6InRlc3RAdGVzdC5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCRJb09Ra2pWMDJqTVFiTjBYeWRqdUEuOVN0SHJCdDNabTlwZ0tHNG5wWm5HZDkxdlcwNkt6QyIsIl9fdiI6MH0sImlhdCI6MTU3NTY0MTg5MywiZXhwIjoxNTc1NjQ1NDkzfQ.3a4PZDNnyi_zWAWDtcxxW7gFGEcW1OYtD8hpcL6H0Ec",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://0.0.0.0:3000/users?Authorization",
+							"protocol": "http",
+							"host": [
+								"0",
+								"0",
+								"0",
+								"0"
+							],
+							"port": "3000",
+							"path": [
+								"users"
+							],
+							"query": [
+								{
+									"key": "Authorization",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create user",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\":\"test\",\n\t\"mail\":\"test@test.com\",\n\t\"password\": \"secret\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://0.0.0.0:3000/register",
+							"protocol": "http",
+							"host": [
+								"0",
+								"0",
+								"0",
+								"0"
+							],
+							"port": "3000",
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Authentication",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\t\"mail\":\"test@test.com\",\n\t\"password\": \"secret\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://0.0.0.0:3000/login",
+							"protocol": "http",
+							"host": [
+								"0",
+								"0",
+								"0",
+								"0"
+							],
+							"port": "3000",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "sessionsAPI",
+			"item": [
+				{
+					"name": "Create sessions",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjVkZWE2MTJhMjliYTdmN2Y4NGY0NDI4NiIsIm5hbWUiOiJ0ZXN0IiwibWFpbCI6InRlc3RAdGVzdC5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCRJb09Ra2pWMDJqTVFiTjBYeWRqdUEuOVN0SHJCdDNabTlwZ0tHNG5wWm5HZDkxdlcwNkt6QyIsIl9fdiI6MH0sImlhdCI6MTU3NTY0MTg5MywiZXhwIjoxNTc1NjQ1NDkzfQ.3a4PZDNnyi_zWAWDtcxxW7gFGEcW1OYtD8hpcL6H0Ec",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"nom\": \"ASI D20.4\",\n\t\"description\": \"La meilleure session !\",\n\t\"annee\": \"2019\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://0.0.0.0:3000/sessions",
+							"protocol": "http",
+							"host": [
+								"0",
+								"0",
+								"0",
+								"0"
+							],
+							"port": "3000",
+							"path": [
+								"sessions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all sessions",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjVkZWE2MTJhMjliYTdmN2Y4NGY0NDI4NiIsIm5hbWUiOiJ0ZXN0IiwibWFpbCI6InRlc3RAdGVzdC5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCRJb09Ra2pWMDJqTVFiTjBYeWRqdUEuOVN0SHJCdDNabTlwZ0tHNG5wWm5HZDkxdlcwNkt6QyIsIl9fdiI6MH0sImlhdCI6MTU3NTY0MTg5MywiZXhwIjoxNTc1NjQ1NDkzfQ.3a4PZDNnyi_zWAWDtcxxW7gFGEcW1OYtD8hpcL6H0Ec",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://0.0.0.0:3000/sessions",
+							"protocol": "http",
+							"host": [
+								"0",
+								"0",
+								"0",
+								"0"
+							],
+							"port": "3000",
+							"path": [
+								"sessions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get a session",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjVkZWE2MTJhMjliYTdmN2Y4NGY0NDI4NiIsIm5hbWUiOiJ0ZXN0IiwibWFpbCI6InRlc3RAdGVzdC5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCRJb09Ra2pWMDJqTVFiTjBYeWRqdUEuOVN0SHJCdDNabTlwZ0tHNG5wWm5HZDkxdlcwNkt6QyIsIl9fdiI6MH0sImlhdCI6MTU3NTY0MTg5MywiZXhwIjoxNTc1NjQ1NDkzfQ.3a4PZDNnyi_zWAWDtcxxW7gFGEcW1OYtD8hpcL6H0Ec",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://0.0.0.0:3000/sessions/:id",
+							"protocol": "http",
+							"host": [
+								"0",
+								"0",
+								"0",
+								"0"
+							],
+							"port": "3000",
+							"path": [
+								"sessions",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "5dea21cd8c2f7077c2d8a8d3",
+									"description": "'_id' of the session"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update a session",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjVkZWE2MTJhMjliYTdmN2Y4NGY0NDI4NiIsIm5hbWUiOiJ0ZXN0IiwibWFpbCI6InRlc3RAdGVzdC5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCRJb09Ra2pWMDJqTVFiTjBYeWRqdUEuOVN0SHJCdDNabTlwZ0tHNG5wWm5HZDkxdlcwNkt6QyIsIl9fdiI6MH0sImlhdCI6MTU3NTY0MTg5MywiZXhwIjoxNTc1NjQ1NDkzfQ.3a4PZDNnyi_zWAWDtcxxW7gFGEcW1OYtD8hpcL6H0Ec",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"description\": \"new description\",\n\t\"annee\": \"2000\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://0.0.0.0:3000/sessions/:id",
+							"protocol": "http",
+							"host": [
+								"0",
+								"0",
+								"0",
+								"0"
+							],
+							"port": "3000",
+							"path": [
+								"sessions",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "5dea356f0455a1f672960a5c",
+									"description": "'_id' of the session"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a session",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjVkZWE2MTJhMjliYTdmN2Y4NGY0NDI4NiIsIm5hbWUiOiJ0ZXN0IiwibWFpbCI6InRlc3RAdGVzdC5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCRJb09Ra2pWMDJqTVFiTjBYeWRqdUEuOVN0SHJCdDNabTlwZ0tHNG5wWm5HZDkxdlcwNkt6QyIsIl9fdiI6MH0sImlhdCI6MTU3NTY0MTg5MywiZXhwIjoxNTc1NjQ1NDkzfQ.3a4PZDNnyi_zWAWDtcxxW7gFGEcW1OYtD8hpcL6H0Ec",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://0.0.0.0:3000/sessions/:id",
+							"protocol": "http",
+							"host": [
+								"0",
+								"0",
+								"0",
+								"0"
+							],
+							"port": "3000",
+							"path": [
+								"sessions",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "5dea21cd8c2f7077c2d8a8d3",
+									"description": "'_id' of the session"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "81068ab6-215b-4645-98e2-ddfb11f6c1b9",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "6449b63f-2c36-431f-a7c3-3fcb461e635f",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "studentsAPI",
+			"item": [
+				{
+					"name": "Create student",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjVkZWE2MTJhMjliYTdmN2Y4NGY0NDI4NiIsIm5hbWUiOiJ0ZXN0IiwibWFpbCI6InRlc3RAdGVzdC5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCRJb09Ra2pWMDJqTVFiTjBYeWRqdUEuOVN0SHJCdDNabTlwZ0tHNG5wWm5HZDkxdlcwNkt6QyIsIl9fdiI6MH0sImlhdCI6MTU3NTY0MTg5MywiZXhwIjoxNTc1NjQ1NDkzfQ.3a4PZDNnyi_zWAWDtcxxW7gFGEcW1OYtD8hpcL6H0Ec",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"nom\": \"Balle\",\n\t\"prenom\": \"Alexandre\",\n\t\"session\": \"ASI D20.4\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://0.0.0.0:3000/students",
+							"protocol": "http",
+							"host": [
+								"0",
+								"0",
+								"0",
+								"0"
+							],
+							"port": "3000",
+							"path": [
+								"students"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all students",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://0.0.0.0:3000/students",
+							"protocol": "http",
+							"host": [
+								"0",
+								"0",
+								"0",
+								"0"
+							],
+							"port": "3000",
+							"path": [
+								"students"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get a student",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://0.0.0.0:3000/students/:id",
+							"protocol": "http",
+							"host": [
+								"0",
+								"0",
+								"0",
+								"0"
+							],
+							"port": "3000",
+							"path": [
+								"students",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "5dea21cd8c2f7077c2d8a8d3",
+									"description": "'_id' of the student"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update a student",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"nom\": \"Hierso\",\n\t\"prenom\": \"Sebastien\",\n\t\"session\": \"ASI D20.1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://0.0.0.0:3000/students/:id",
+							"protocol": "http",
+							"host": [
+								"0",
+								"0",
+								"0",
+								"0"
+							],
+							"port": "3000",
+							"path": [
+								"students",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "5dea356f0455a1f672960a5c",
+									"description": "'_id' of the student"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a student",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://0.0.0.0:3000/students/:id",
+							"protocol": "http",
+							"host": [
+								"0",
+								"0",
+								"0",
+								"0"
+							],
+							"port": "3000",
+							"path": [
+								"students",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "5dea21cd8c2f7077c2d8a8d3",
+									"description": "'_id' of the student"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "81068ab6-215b-4645-98e2-ddfb11f6c1b9",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "6449b63f-2c36-431f-a7c3-3fcb461e635f",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
