@@ -1,4 +1,7 @@
 const mongoose = require('mongoose');
+const jwt = require('jsonwebtoken');
+const bcrypt = require('bcrypt');
+const config = require('config');
 User = mongoose.model('Users');
 
 exports.list_all_users = function (req, res) {
@@ -170,4 +173,34 @@ exports.delete_user = function (req, res) {
                 message: "Something went wrong."
             });
          });
+}
+
+exports.login = function (req, res) {
+    User.findOne({mail: req.body.mail}, function (err, user) {
+        if (err) res.send(err);
+        if (!user) {
+            res.status(400);
+            res.json({
+                status: "404",
+                message: "USer not found.",
+                user: user
+            });
+        }
+        if (bcrypt.compareSync(req.body.password, user.password)) {
+            jwt.sign({user}, config.get("jwt_signature"),
+                {expiresIn: '1h'}, (err, token) => {
+                    if (err) res.send(err);
+                    res.json({
+                        token: token
+                    });
+                })
+        } else {
+            res.status(400);
+            res.json({
+                status: "400",
+                message: "Authentication failed.",
+                data: null
+            });
+        }
+    })
 }
