@@ -50,11 +50,10 @@ exports.login = function (req, res) {
         }
         if (bcrypt.compareSync(req.body.password, user.password)) {
             jwt.sign({user}, config.get("jwt_signature"),
-                {expiration: '1h'}, (err, token) => {
+                {expiresIn: '1h'}, (err, token) => {
                     if (err) res.send(err);
                     res.json({
-                        token: token,
-                        user_id: user._id
+                        token: token
                     });
                 })
         } else {
