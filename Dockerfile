@@ -9,7 +9,7 @@ WORKDIR /usr/src/app
 COPY package*.json ./
 
 RUN npm install
-RUN npm install config jsonwebtoken bcrypt
+RUN npm install config jsonwebtoken bcrypt mocha chai
 # If you are building your code for production
 # RUN npm ci --only=production
 
@@ -17,6 +17,7 @@ RUN npm install config jsonwebtoken bcrypt
 COPY app.js .
 COPY config ./config
 COPY middleware ./middleware
+COPY test ./test
 
 EXPOSE 8080
 CMD [ "node", "app.js" ]
