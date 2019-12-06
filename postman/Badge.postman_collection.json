@@ -393,7 +393,13 @@
 					"name": "Get all students",
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjVkZWE2MTJhMjliYTdmN2Y4NGY0NDI4NiIsIm5hbWUiOiJ0ZXN0IiwibWFpbCI6InRlc3RAdGVzdC5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCRJb09Ra2pWMDJqTVFiTjBYeWRqdUEuOVN0SHJCdDNabTlwZ0tHNG5wWm5HZDkxdlcwNkt6QyIsIl9fdiI6MH0sImlhdCI6MTU3NTY0MTg5MywiZXhwIjoxNTc1NjQ1NDkzfQ.3a4PZDNnyi_zWAWDtcxxW7gFGEcW1OYtD8hpcL6H0Ec",
+								"type": "text"
+							}
+						],
 						"url": {
 							"raw": "http://0.0.0.0:3000/students",
 							"protocol": "http",
@@ -415,7 +421,13 @@
 					"name": "Get a student",
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjVkZWE2MTJhMjliYTdmN2Y4NGY0NDI4NiIsIm5hbWUiOiJ0ZXN0IiwibWFpbCI6InRlc3RAdGVzdC5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCRJb09Ra2pWMDJqTVFiTjBYeWRqdUEuOVN0SHJCdDNabTlwZ0tHNG5wWm5HZDkxdlcwNkt6QyIsIl9fdiI6MH0sImlhdCI6MTU3NTY0MTg5MywiZXhwIjoxNTc1NjQ1NDkzfQ.3a4PZDNnyi_zWAWDtcxxW7gFGEcW1OYtD8hpcL6H0Ec",
+								"type": "text"
+							}
+						],
 						"url": {
 							"raw": "http://0.0.0.0:3000/students/:id",
 							"protocol": "http",
@@ -451,6 +463,11 @@
 								"name": "Content-Type",
 								"value": "application/json",
 								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjVkZWE2MTJhMjliYTdmN2Y4NGY0NDI4NiIsIm5hbWUiOiJ0ZXN0IiwibWFpbCI6InRlc3RAdGVzdC5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCRJb09Ra2pWMDJqTVFiTjBYeWRqdUEuOVN0SHJCdDNabTlwZ0tHNG5wWm5HZDkxdlcwNkt6QyIsIl9fdiI6MH0sImlhdCI6MTU3NTY0MTg5MywiZXhwIjoxNTc1NjQ1NDkzfQ.3a4PZDNnyi_zWAWDtcxxW7gFGEcW1OYtD8hpcL6H0Ec",
+								"type": "text"
 							}
 						],
 						"body": {
@@ -479,7 +496,7 @@
 							"variable": [
 								{
 									"key": "id",
-									"value": "5dea356f0455a1f672960a5c",
+									"value": "5dea6620ee7ef08fbb69b3d0",
 									"description": "'_id' of the student"
 								}
 							]
@@ -491,7 +508,13 @@
 					"name": "Delete a student",
 					"request": {
 						"method": "DELETE",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjVkZWE2MTJhMjliYTdmN2Y4NGY0NDI4NiIsIm5hbWUiOiJ0ZXN0IiwibWFpbCI6InRlc3RAdGVzdC5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCRJb09Ra2pWMDJqTVFiTjBYeWRqdUEuOVN0SHJCdDNabTlwZ0tHNG5wWm5HZDkxdlcwNkt6QyIsIl9fdiI6MH0sImlhdCI6MTU3NTY0MTg5MywiZXhwIjoxNTc1NjQ1NDkzfQ.3a4PZDNnyi_zWAWDtcxxW7gFGEcW1OYtD8hpcL6H0Ec",
+								"type": "text"
+							}
+						],
 						"url": {
 							"raw": "http://0.0.0.0:3000/students/:id",
 							"protocol": "http",
@@ -509,7 +532,7 @@
 							"variable": [
 								{
 									"key": "id",
-									"value": "5dea21cd8c2f7077c2d8a8d3",
+									"value": "5dea6620ee7ef08fbb69b3d0",
 									"description": "'_id' of the student"
 								}
 							]
